@@ -1,4 +1,4 @@
-/* Charity: water Brand Colors & Fonts */
+/* Charity: water Brand Colors */
 :root {
   --yellow: #FFC907;
   --blue: #2E9DF7;
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 30px;
   background-color: var(--gray);
@@ -21,7 +21,7 @@ body {
 
 .container {
   max-width: 750px;
-  margin: 50px auto;
+  margin: 0 auto;
   background-color: var(--white);
   padding: 40px;
   border-radius: 10px;
@@ -31,39 +31,51 @@ body {
 
 .logo {
   width: 200px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: bold;
   margin-bottom: 10px;
+  color: var(--text);
 }
 
 .game-instructions {
   font-size: 18px;
   margin-bottom: 30px;
+  color: var(--text);
 }
 
 .stats {
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   padding: 15px 0;
   border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.stats p {
-  margin: 0;
-  font-size: 18px;
+.stats span {
+  color: var(--blue);
+}
+
+.achievement-message {
+  font-size: 20px;
   font-weight: bold;
+  color: var(--blue);
+  margin: 20px 0;
 }
 
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  margin-bottom: 30px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .grid-cell {
@@ -94,13 +106,13 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  animation: popUp 0.4s ease-in-out;
   border-radius: 50%;
-  animation: popUp 0.5s ease;
 }
 
 @keyframes popUp {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.3);
     opacity: 0;
   }
   100% {
@@ -118,9 +130,27 @@ button {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+  margin: 30px auto 0;
+  display: inline-block;
   transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #e6b800;
+  background-color: #e6b300;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 150px;
+  }
 }
