@@ -1,13 +1,7 @@
-/* Charity: water Brand Colors & Fonts */
+/* Charity: water Brand Colors */
 :root {
   --yellow: #FFC907;
   --blue: #2E9DF7;
-  --green: #4FCB53;
-  --light-blue: #8BD1CB;
-  --orange: #FF902A;
-  --red: #F5402C;
-  --dark-green: #159A48;
-  --pink: #F16061;
   --gray: #f0f0f0;
   --white: #ffffff;
   --text: #333;
@@ -27,21 +21,21 @@ body {
 
 .container {
   max-width: 750px;
-  margin: 50px auto;
+  margin: 0 auto;
   background-color: var(--white);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .logo {
+  width: 200px;
+  margin: 0 auto 20px;
   display: block;
-  margin: 0 auto 15px;
-  width: 120px;
 }
 
 h1 {
-  text-align: center;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -51,31 +45,37 @@ h1 {
 .game-instructions {
   font-size: 18px;
   margin-bottom: 30px;
-  text-align: center;
+  color: var(--text);
 }
 
 .stats {
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   padding: 15px 0;
   border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.stats p {
-  margin: 0;
-  font-size: 18px;
+.stats span {
+  color: var(--blue);
+}
+
+.achievement-message {
+  font-size: 20px;
   font-weight: bold;
-  color: var(--text);
+  color: var(--blue);
+  margin: 20px 0;
 }
 
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  margin: 0 auto;
   max-width: 500px;
+  margin: 0 auto;
 }
 
 .grid-cell {
@@ -85,10 +85,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .water-can-wrapper {
@@ -107,15 +106,13 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer;
+  animation: popUp 0.4s ease-in-out;
   border-radius: 50%;
-  animation: popUp 0.5s cubic-bezier(0.17, 0.67, 0.34, 2);
-  transform-origin: center;
 }
 
 @keyframes popUp {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.3);
     opacity: 0;
   }
   100% {
@@ -133,8 +130,8 @@ button {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  display: block;
   margin: 30px auto 0;
+  display: inline-block;
   transition: background-color 0.2s;
 }
 
@@ -142,15 +139,7 @@ button:hover {
   background-color: #e6b300;
 }
 
-.achievement-message {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: var(--blue);
-}
-
-/* Responsive design */
+/* Responsive for smaller screens */
 @media screen and (max-width: 600px) {
   .game-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -159,5 +148,9 @@ button:hover {
   .stats {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .logo {
+    width: 150px;
   }
 }
