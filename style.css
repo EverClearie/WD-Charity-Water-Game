@@ -1,145 +1,110 @@
-/* Charity: water Brand Colors */
-:root {
-  --yellow: #FFC907;
-  --blue: #2E9DF7;
-  --gray: #f0f0f0;
-  --white: #ffffff;
-  --text: #333;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
   margin: 0;
-  padding: 30px;
-  background-color: var(--gray);
-  color: var(--text);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: var(--white);
+  background-color: white;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 700px;
   text-align: center;
+  margin-top: 40px;
 }
 
+/* Logo Fix */
 .logo {
-  width: 200px;
-  margin: 0 auto 20px;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 160px;
   display: block;
+  margin: 0 auto 15px auto;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Header Text */
 h1 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: var(--text);
+  margin-top: 10px;
+  color: #333;
 }
 
-.game-instructions {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: var(--text);
+p {
+  color: #555;
+  margin-bottom: 25px;
 }
 
+/* Stats Box */
 .stats {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 30px;
-  background-color: #f9f9f9;
-  padding: 15px 0;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 12px 20px;
   border-radius: 8px;
   font-weight: bold;
-  font-size: 18px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
 }
 
 .stats span {
-  color: var(--blue);
+  color: #007bff;
 }
 
-.achievement-message {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--blue);
-  margin: 20px 0;
-}
-
+/* Game Grid */
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  max-width: 500px;
-  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
-.grid-cell {
-  background-color: #e8e8e8;
-  border-radius: 8px;
-  aspect-ratio: 1;
+.grid-item {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
+  transition: transform 0.15s ease-in-out;
 }
 
-.water-can-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
+.grid-item:hover {
+  transform: scale(1.03);
 }
 
-.water-can {
-  width: 100%;
-  height: 100%;
-  background-image: url('img/water-can.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: popUp 0.4s ease-in-out;
-  border-radius: 50%;
+.grid-item img {
+  width: 50px;
+  height: auto;
 }
 
-@keyframes popUp {
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
+/* Start Button */
 button {
-  background-color: var(--yellow);
-  color: black;
+  background-color: #ffcc00;
   border: none;
+  color: #000;
   padding: 12px 24px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
-  margin: 30px auto 0;
-  display: inline-block;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #e6b300;
+  background-color: #e6b800;
 }
 
-/* Responsive for smaller screens */
+/* Responsive Layout */
 @media screen and (max-width: 600px) {
   .game-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -151,6 +116,6 @@ button:hover {
   }
 
   .logo {
-    width: 150px;
+    width: 130px;
   }
 }
