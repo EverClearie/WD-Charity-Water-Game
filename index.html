@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Water Quest – charity: water</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Quest</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
     <img src="img/cw_logo_horizontal.png" alt="charity: water logo" class="logo" />
 
-    <!-- Title -->
     <h1>Water Quest</h1>
-    <p>Tap the yellow jerry cans to collect water! Get 25 in 30 seconds to win.</p>
+    <p class="game-instructions">Collect 25 jerry cans in 30 seconds to win!</p>
 
-    <!-- Stats -->
     <div class="stats">
-      <p>Cans Collected: <span id="score">0</span></p>
-      <p>Time Left: <span id="time">30</span> seconds</p>
+      <p>Cans Collected: <span id="current-cans">0</span></p>
+      <p>Time Left: <span id="timer">30</span> seconds</p>
     </div>
 
-    <!-- Game Grid -->
+    <div id="achievements" class="achievement-message"></div>
+
     <div class="game-grid">
-      <!-- JS dynamically fills in 9 divs -->
+      <!-- Grid will be created by JavaScript -->
     </div>
 
-    <!-- Start Button -->
     <button id="start-game">Start Game</button>
-
-    <!-- Message Result -->
-    <p id="result-message" style="margin-top: 20px; font-weight: bold;"></p>
   </div>
 
   <script src="script.js"></script>
