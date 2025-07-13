@@ -70,6 +70,26 @@ h1 {
   margin: 20px 0;
 }
 
+/* Difficulty Mode Selector */
+.difficulty-select {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.difficulty-select label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.difficulty-select select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: var(--white);
+  color: var(--text);
+}
+
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -139,21 +159,6 @@ button:hover {
   background-color: #e6b300;
 }
 
-/* Responsive for smaller screens */
-@media screen and (max-width: 600px) {
-  .game-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stats {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .logo {
-    width: 150px;
-  }
-}
 /* Footer Styles */
 .footer {
   margin-top: 50px;
@@ -189,4 +194,20 @@ button:hover {
 
 .footer a:hover {
   color: #1a7ccc;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 150px;
+  }
 }
